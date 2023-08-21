@@ -4,9 +4,9 @@
 This is a simple REST API project using Spring Boot, JPA, Hibernate and MySQL. It allows you to perform CRUD operations on a user entity with the following fields:
 
 - id
-- name
-- email
-- phone
+- title
+- description
+
 
 ## How to run
 
@@ -24,23 +24,23 @@ Alternatively, you can import this project into your preferred IDE and run it fr
 
 ## How to use
 
-Once the application is running, you can use any REST client tool (such as Postman) to test the API endpoints. The base URL is `http://localhost:8080/api/users`.
+Once the application is running, you can use any REST client tool (such as Postman) to test the API endpoints. The base URL is `http://localhost:8080/courses`.
 
 The available endpoints are:
 
-- `GET /api/users` : Get all users
-- `GET /api/users/{id}` : Get user by id
-- `POST /api/users` : Create a new user
-- `PUT /api/users/{id}` : Update an existing user by id
-- `DELETE /api/users/{id}` : Delete a user by id
+- `GET /courses` : Get all courses
+- `GET courses/{id}` : Get course by id
+- `POST /courses` : Create a new course
+- `PUT courses/{id}` : Update an existing course by id
+- `DELETE courses/{id}` : Delete a course by id
 
 The request and response body format is JSON. For example, to create a new user, you can send a POST request to `http://localhost:8080/api/users` with the following body:
 
 ```json
 {
-    "name": "Alice",
-    "email": "alice@example.com",
-    "phone": "1234567890"
+    "id": 145,
+    "title": "Angular course",
+    "description": "complete angular tutorial"
 }
 ```
 
@@ -48,10 +48,9 @@ And you will get a response like this:
 
 ```json
 {
-    "id": 1,
-    "name": "Alice",
-    "email": "alice@example.com",
-    "phone": "1234567890"
+    "id": 145,
+    "title": "Angular course",
+    "description": "complete angular tutorial"
 }
 ```
 
